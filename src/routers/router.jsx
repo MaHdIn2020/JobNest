@@ -6,6 +6,7 @@ import RootLayout from '../pages/Layouts/RootLayout';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Authentication/Login';
 import Register from '../pages/Authentication/Register';
+import ResetPassword from '../pages/Authentication/ResetPassword';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     Component: Register,
+  },
+  {
+    path: "/reset-password",
+    Component: ResetPassword
   }
 ]);
 

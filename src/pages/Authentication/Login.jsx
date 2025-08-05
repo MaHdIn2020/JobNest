@@ -1,28 +1,66 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import loginLottie from "../../assets/Login and Sign up.json"
+import loginLottie from "../../assets/Login and Sign up.json";
+import { NavLink } from 'react-router';
+
 const Login = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({ email, password });
+    };
+
     return (
-    <div className="hero bg-base-200 min-h-screen ">
-    <div className="hero-content flex-col lg:flex-row">
-        <div className="text-center lg:text-left">
-            <Lottie style={{height:'800px', width: "800px"}} animationData={loginLottie}> </Lottie>
+        <div className="hero bg-base-200 min-h-screen">
+            <div className="hero-content flex-col lg:flex-row">
+                <div className="text-center lg:text-left">
+                    <Lottie
+                        style={{ height: '500px', width: "500px" }}
+                        animationData={loginLottie}
+                    />
+                </div>
+                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <div className="card-body">
+                        <h1 className="text-3xl font-bold text-center">Login</h1>
+                        <form className="fieldset" onSubmit={handleLogin}>
+                            <label className="label" htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                className="input input-bordered"
+                                placeholder="Email"
+                                required
+                            />
+
+                            <label className="label" htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                className="input input-bordered"
+                                placeholder="Password"
+                                required
+                            />
+
+                            <div className="flex gap-2 items-center mt-2">
+                                <p className="">Forgot your password?</p>
+                                <NavLink to="/reset-password" className="btn p-0 min-h-0 h-auto w-1/3"><button className="btn w-full">Reset</button></NavLink>
+                            </div>
+
+                            <div className="flex gap-2 items-center mt-2">
+                                <p className="">Don't have an account?</p>
+                                <NavLink to="/register" className="btn p-0 min-h-0 h-auto w-1/3"><button className="btn w-full">Register</button></NavLink>
+                            </div>
+
+                            <button type="submit" className="btn btn-neutral mt-4 w-full">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <div className="card-body">
-            <h1 className="text-3xl font-bold text-center">Login</h1>
-            <fieldset className="fieldset">
-            <label className="label">Email</label>
-            <input type="email" className="input" placeholder="Email" />
-            <label className="label">Password</label>
-            <input type="password" className="input" placeholder="Password" />
-            <div><a className="link link-hover">Forgot password?</a></div>
-            <button className="btn btn-neutral mt-4">Login</button>
-            </fieldset>
-        </div>
-        </div>
-    </div>
-    </div>
     );
 };
 
