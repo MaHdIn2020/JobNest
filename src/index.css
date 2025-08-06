@@ -1,2 +1,124 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Pure black theme configuration - all components use the same black */
+[data-theme="dark"] {
+  --b1: #000000; /* Base background - pure black */
+  --b2: #000000; /* Secondary background - pure black */
+  --b3: #000000; /* Tertiary background - pure black */
+  --bc: #ffffff; /* Base content - pure white */
+  --n: #ffffff; /* Neutral content - pure white */
+  --p: #ffffff; /* Primary - pure white */
+  --s: #ffffff; /* Secondary - pure white */
+  --a: #ffffff; /* Accent - pure white */
+  --er: #ffffff; /* Error - pure white */
+  --su: #ffffff; /* Success - pure white */
+  --wa: #ffffff; /* Warning - pure white */
+  --in: #ffffff; /* Info - pure white */
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom scrollbar for pure black theme */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
+/* Force all components to use the same pure black from DaisyUI theme */
+[data-theme="dark"] * {
+  background-color: var(--b1) !important;
+}
+
+[data-theme="dark"] .bg-black,
+[data-theme="dark"] .bg-base-100,
+[data-theme="dark"] .bg-base-200,
+[data-theme="dark"] .bg-base-300,
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .footer,
+[data-theme="dark"] .hero,
+[data-theme="dark"] .card,
+[data-theme="dark"] .dropdown-content,
+[data-theme="dark"] .menu,
+[data-theme="dark"] .input,
+[data-theme="dark"] .btn {
+  background-color: var(--b1) !important;
+}
+
+/* Force all text to use the same white from DaisyUI theme */
+[data-theme="dark"] .text-white,
+[data-theme="dark"] .text-base-content,
+[data-theme="dark"] .text-neutral-content {
+  color: var(--bc) !important;
+}
+
+/* Force all borders to use white */
+[data-theme="dark"] .border-white,
+[data-theme="dark"] .border-base-300 {
+  border-color: var(--bc) !important;
+}
+
+/* Button overrides for pure black theme */
+[data-theme="dark"] .btn {
+  background-color: var(--b1) !important;
+  color: var(--bc) !important;
+  border-color: var(--bc) !important;
+}
+
+[data-theme="dark"] .btn:hover {
+  background-color: var(--bc) !important;
+  color: var(--b1) !important;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--bc) !important;
+  color: var(--b1) !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: var(--b1) !important;
+  color: var(--bc) !important;
+  border-color: var(--bc) !important;
+}
+
+/* Input overrides */
+[data-theme="dark"] .input {
+  background-color: var(--b1) !important;
+  color: var(--bc) !important;
+  border-color: var(--bc) !important;
+}
+
+[data-theme="dark"] .input::placeholder {
+  color: var(--bc) !important;
+  opacity: 0.7;
+}
+
+/* Dropdown overrides */
+[data-theme="dark"] .dropdown-content {
+  background-color: var(--b1) !important;
+  border: 1px solid var(--bc) !important;
+}
+
+[data-theme="dark"] .menu li a {
+  color: var(--bc) !important;
+}
+
+[data-theme="dark"] .menu li a:hover {
+  background-color: var(--bc) !important;
+  color: var(--b1) !important;
+}

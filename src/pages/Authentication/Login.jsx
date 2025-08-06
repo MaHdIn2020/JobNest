@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import loginLottie from "../../assets/Login and Sign up.json";
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext);
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log({ email, password });
+        signInUser(email, password)
+            .then((result) => {
+                console.log("User logged in:", result.user);
+            })
+            .catch((error) => {
+                console.error("Error logging in:", error);
+            });
+        
     };
 
     return (
