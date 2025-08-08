@@ -44,6 +44,6 @@ Admins can manage users, approve premium memberships, and oversee all contact an
 ---
 
 📬 Contact
-Author: Tanjip Surait Mahdin
-Email: tanjip.surait.mahdin@gmail.com
-GitHub: https://github.com/MaHdIn2020
+- Author: Tanjip Surait Mahdin
+- Email: tanjip.surait.mahdin@gmail.com
+- GitHub: https://github.com/MaHdIn2020
